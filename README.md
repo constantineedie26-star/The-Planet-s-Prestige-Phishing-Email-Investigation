@@ -395,6 +395,12 @@ The extracted archive contained a folder named `PuzzleToCoCanDa`. Initial inspec
 
 Further analysis revealed concealed Base64-encoded information embedded within the spreadsheet.
 
+While reviewing the extracted folder, I enabled Hidden items in Windows File Explorer. This revealed an additional file named Money.xlsx that was not visible by default.
+
+
+
+
+
 After decoding the hidden content, the following location was recovered:
 
 > **The Martian Colony, Beside Interplanetary Spaceport**

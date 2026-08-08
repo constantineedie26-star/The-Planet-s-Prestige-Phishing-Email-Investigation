@@ -202,7 +202,7 @@ The visible sender was billjobs@microapple.com, while the Reply-To address was n
 These findings justified continuing the investigation.
 
 ---
-
+# Email Header Analysis:
 
 ![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/8a922390eb7101ef5eb9b75c07747836dac05f44/Screenshot%202026-08-08%20150712.png)
 
@@ -232,7 +232,7 @@ Although an SPF failure alone does not confirm malicious activity, it significan
 
 ---
 
-# Test
+# Spf Analysis:
 
 ![SPF](spf%20file.png)
 
@@ -257,6 +257,9 @@ The encoded data was decoded to expose the original content for forensic examina
 - Decoded information provided additional evidence for the investigation.
 
 ### Analyst Notes
+The provided evidence was an .eml file named A Hope to CoCanDa.eml. I opened the file in Notepad++ to review the raw email contents, including the headers, MIME structure, encoded message body, and attachment information.
+
+The email was identified as a multipart MIME message containing a Base64-encoded plain-text body. After decoding the body in CyberChef, I identified a ransom demand and instructions to solve an attached puzzle.
 
 Base64 encoding is commonly used to transport binary data within email messages.
 
@@ -264,15 +267,8 @@ Although Base64 is not encryption, threat actors frequently use it to obscure ma
 
 ---
 
-<details>
-
-<summary><strong>📸 View Base64 Decoding Screenshots</strong></summary>
-
-Insert your Base64 decoding screenshots here.
-
-</details>
-
----
+# Base64 Decoding:
+The raw email showed a multipart MIME structure and a Base64-encoded plain-text body.
 
 # Phase 4-Attachment Verification
 

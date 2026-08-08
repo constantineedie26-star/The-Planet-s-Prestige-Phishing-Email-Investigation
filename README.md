@@ -195,6 +195,10 @@ Notable indicators included:
 - Email originated from an unexpected sending host.
 - Sender identity could not be fully trusted.
 
+The email failed SPF authentication because the sending IP address 93.99.104.210 was not authorized to send email on behalf of microapple.com.
+
+The visible sender was billjobs@microapple.com, while the Reply-To address was negeja3921@pashter.com. This meant replies would be directed to a different domain.
+
 These findings justified continuing the investigation.
 
 ---
@@ -203,14 +207,10 @@ These findings justified continuing the investigation.
 
 <summary><strong>📸 View Email Header Analysis Screenshots</strong></summary>
 
-> Insert your Email Header screenshots here.
-
-Example:
+>
 
 ```text
-Screenshots/
-01-email-header-analysis.png
-02-email-header-details.png
+<a href="https://imgur.com/a/7PkGNfI">Email Header</a>
 ```
 
 </details>
@@ -725,20 +725,6 @@ This project reflects the investigative mindset required of Security Operations 
 
 ---
 
-# 🚀 Future Improvements
-
-This investigation establishes a strong foundation for more advanced phishing and incident response analyses. Future enhancements could include:
-
-- Automated email header analysis using Python.
-- IOC enrichment with threat intelligence platforms.
-- YARA rule development for suspicious attachments.
-- Sigma rule creation for SIEM detection.
-- Splunk and Microsoft Sentinel detection queries.
-- Email sandbox analysis.
-- Malware reverse engineering (where applicable).
-
----
-
 # 🛡 Security Recommendations
 
 Based on the evidence collected throughout this investigation, the following recommendations are proposed to strengthen email security controls and reduce the risk of similar phishing attacks and improve the organization's overall email security posture.
@@ -840,8 +826,7 @@ This project reflects the investigative, analytical, and documentation skills ex
 
 --
 
-# 🚀 Future Enhancements
-
+# 🚀  Future Improvements
 As I continue developing my SOC and DFIR skills, I plan to extend this investigation by implementing:
 
 - Microsoft Sentinel detection rules.
@@ -851,6 +836,8 @@ As I continue developing my SOC and DFIR skills, I plan to extend this investiga
 - Threat intelligence enrichment of Indicators of Compromise.
 - Automated email header analysis using Python.
 - Email sandbox analysis for suspicious attachments.
+- Malware reverse engineering (where applicable).
+
 
 ---
 

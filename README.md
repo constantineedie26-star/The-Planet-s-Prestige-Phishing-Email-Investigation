@@ -342,6 +342,7 @@ The signature identified the attachment as a ZIP archive instead of a PDF docume
 
 To validate the attachment's true file type, I analyzed its Base64-encoded content in CyberChef by applying the `From Base64` operation followed by `To Hex`, enabling examination of the file's first four-byte signature.
 
+![Image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/e316a19f2419df8c8af2986f10110f6707184d77/To%20Hex%20Byte.png)
 
 Threat actors frequently disguise malicious files by changing their extensions while leaving the underlying file format unchanged.
 

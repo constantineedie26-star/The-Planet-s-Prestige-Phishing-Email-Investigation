@@ -87,8 +87,8 @@ The primary objectives of this investigation were to:
 | Operating System | Windows 11 Virtual Machine |
 | Investigation | File Explorer |
 | Email Analysis | Email Header Inspection |
-| Encoding Analysis | Base64 Decoder |
-| File Validation | File Signature Analysis |
+| Encoding Analysis | Cyberchef(Base64 Decoder) and HxD Decoder |
+| File Validation |Kessler File Signature Analysis |
 | Digital Forensics | Metadata Examination |
 | Documentation | Markdown |
 
@@ -177,11 +177,11 @@ Several anomalies were immediately observed, indicating the email required furth
 | Field | Observation |
 |---------|-------------|
 | Subject | A Hope to CoCanDa |
-| Sender | billjobs@microapple[.]com |
-| Reply-To | negeja3921@pashter[.]com |
+| Sender | billjobs@microapple.com |
+| Reply-To | negeja3921@pashter.com |
 | Recipient | themajoronearth@gmail.com |
-| Sending Host | emkei[.]cz |
-| Source IP | 93[.]99[.]104[.]210 |
+| Sending Host | emkei.cz |
+| Source IP | 93.99.104.210 |
 | SPF Authentication | Failed |
 
 ### Initial Assessment
@@ -516,7 +516,7 @@ The concealed evidence was successfully recovered, allowing the investigation to
 |----------|-------------|
 | Email Authentication | SPF validation failed. |
 | Sender Identity | Sender and Reply-To domains did not match. |
-| Email Origin | Message originated from **emkei[.]cz** (93[.]99[.]104[.]210). |
+| Email Origin | Message originated from **emkei.cz** (9399.104.210). |
 | Attachment | Advertised as a PDF but verified as a ZIP archive. |
 | Hidden Content | Base64-encoded data discovered within a hidden spreadsheet. |
 | Metadata | Author listed as **Pestero Negeja** (not sufficient for attribution). |
@@ -553,8 +553,8 @@ No evidence indicated additional activity beyond the delivery of the email.
 | Evidence | Value |
 |----------|-------|
 | Recipient | themajoronearth@gmail.com |
-| Sending Host | emkei[.]cz |
-| Source IP | 93[.]99[.]104[.]210 |
+| Sending Host | emkei.cz |
+| Source IP | 93.99.104.210 |
 | Hidden Location | The Martian Colony, Beside Interplanetary Spaceport |
 
 ---
@@ -580,15 +580,15 @@ The phishing campaign employed several techniques commonly observed in modern em
 
 ---
 
-# Indicators of Compromise (IOCs)
+# Key Indicators of Compromise (IOCs)
 
 ## Email Indicators
 
 | IOC Type | Indicator |
 |-----------|-----------|
 | Subject | A Hope to CoCanDa |
-| Sender | billjobs@microapple[.]com |
-| Reply-To | negeja3921@pashter[.]com |
+| Sender | billjobs@microapple.com |
+| Reply-To | negeja3921@pashter.com |
 | Recipient | themajoronearth@gmail.com |
 
 ---
@@ -597,8 +597,8 @@ The phishing campaign employed several techniques commonly observed in modern em
 
 | IOC Type | Indicator |
 |-----------|-----------|
-| Sending Host | emkei[.]cz |
-| Source IP | 93[.]99[.]104[.]210 |
+| Sending Host | emkei.cz |
+| Source IP | 93.99.104.210 |
 
 ---
 
@@ -653,29 +653,6 @@ The techniques observed throughout this investigation closely resemble tactics c
 
 ---
 
----
-
-# 🛡️ Recommendations
-
-Based on the findings of this investigation, the following security measures are recommended to reduce the likelihood of similar phishing attacks and improve the organization's overall email security posture.
-
-| Recommendation | Purpose |
-|---------------|---------|
-| Enable SPF, DKIM, and DMARC enforcement | Prevent email spoofing and improve sender verification. |
-| Block or monitor identified IOCs | Detect future communications from known malicious infrastructure. |
-| Verify file signatures instead of relying on extensions | Prevent disguised malicious files from bypassing user inspection. |
-| Deploy advanced email filtering | Detect suspicious attachments, encoded content, and spoofed emails before delivery. |
-| Strengthen user awareness training | Educate users to recognize phishing indicators and report suspicious emails. |
-| Analyze suspicious attachments in isolated environments | Prevent accidental execution of malicious content on production systems. |
-| Preserve forensic evidence | Maintain evidence integrity for future investigations and incident response activities. |
-| Continuously monitor email authentication failures | Detect spoofing attempts and unauthorized senders early. |
-
----
-
-# 📚 Lessons Learned
-
-This investigation reinforced several important cybersecurity and digital forensic concepts that are essential for Security Operations Center (SOC) analysts.
-
 ### Key Takeaways
 
 - Email headers provide critical evidence during phishing investigations.
@@ -686,45 +663,6 @@ This investigation reinforced several important cybersecurity and digital forens
 - Hidden files may contain valuable forensic evidence.
 - Document metadata can provide useful investigative leads but should never be considered definitive attribution.
 - Correlating multiple indicators produces more reliable investigative conclusions than relying on a single artifact.
-
----
-
-# 🎯 Skills Demonstrated
-
-Throughout this investigation, the following practical cybersecurity skills were applied.
-
-## Security Operations
-
-- Phishing Investigation
-- Email Security Analysis
-- Security Event Investigation
-- Incident Documentation
-- Threat Detection
-- IOC Identification
-
----
-
-## Digital Forensics
-
-- Email Header Analysis
-- SPF Validation
-- Base64 Decoding
-- File Signature Verification
-- Archive Analysis
-- Hidden File Discovery
-- Metadata Analysis
-- Evidence Collection
-
----
-
-## Technical Skills
-
-- Windows 11 Virtual Machine
-- File System Analysis
-- Threat Investigation Methodology
-- Digital Evidence Preservation
-- Analytical Thinking
-- Structured Reporting
 
 ---
 
@@ -801,66 +739,10 @@ This investigation establishes a strong foundation for more advanced phishing an
 
 ---
 
-# 📸 Investigation Evidence
-
-<details>
-<summary><strong>📧 Email Header Analysis</strong></summary>
-
-> Insert screenshots showing the complete email header analysis.
-
-</details>
-
----
-
-<details>
-<summary><strong>🔍 SPF Authentication Review</strong></summary>
-
-> Insert screenshots demonstrating the SPF failure.
-
-</details>
-
----
-
-<details>
-<summary><strong>📦 Attachment Verification</strong></summary>
-
-> Insert screenshots showing the disguised PDF attachment and ZIP archive identification.
-
-</details>
-
----
-
-<details>
-<summary><strong>🧬 Base64 Decoding</strong></summary>
-
-> Insert screenshots showing the Base64 decoding process.
-
-</details>
-
----
-
-<details>
-<summary><strong>📁 Hidden File Discovery</strong></summary>
-
-> Insert screenshots showing the hidden spreadsheet and recovered evidence.
-
-</details>
-
----
-
-<details>
-<summary><strong>📝 Metadata Analysis</strong></summary>
-
-> Insert screenshots demonstrating the document metadata examination.
-
-</details>
-
-
----
-
 # 🛡 Security Recommendations
 
-Based on the evidence collected throughout this investigation, the following recommendations are proposed to strengthen email security controls and reduce the risk of similar phishing attacks.
+Based on the evidence collected throughout this investigation, the following recommendations are proposed to strengthen email security controls and reduce the risk of similar phishing attacks and improve the organization's overall email security posture.
+
 
 | Recommendation | Security Benefit |
 |----------------|------------------|
@@ -886,50 +768,6 @@ Based on the evidence collected throughout this investigation, the following rec
 | User Interaction Required | Yes |
 | Evidence Integrity | Preserved |
 | Investigation Status | Complete |
-
----
-
-# 📈 Key Indicators of Compromise (IOCs)
-
-## Email Indicators
-
-| Type | Value |
-|------|-------|
-| Subject | A Hope to CoCanDa |
-| Sender | billjobs@microapple[.]com |
-| Reply-To | negeja3921@pashter[.]com |
-| Recipient | themajoronearth@gmail.com |
-
----
-
-## Network Indicators
-
-| Type | Value |
-|------|-------|
-| Sending Host | emkei[.]cz |
-| Source IP | 93[.]99[.]104[.]210 |
-
----
-
-## File Indicators
-
-| Type | Value |
-|------|-------|
-| Attachment | PuzzleToCoCanDa.pdf |
-| Actual File Type | ZIP Archive |
-| Hidden File | Money.xlsx |
-| Metadata Author | Pestero Negeja |
-
----
-
-# ⚔ MITRE ATT&CK Mapping
-
-| Tactic | Technique | ATT&CK ID |
-|----------|------------------------------|------------|
-| Initial Access | Spearphishing Attachment | T1566.001 |
-| Defense Evasion | Masquerading | T1036 |
-| Defense Evasion | Obfuscated Files or Information | T1027 |
-| Defense Evasion | Deobfuscate / Decode Files | T1140 |
 
 ---
 
@@ -1000,74 +838,7 @@ Throughout the investigation, I successfully:
 
 This project reflects the investigative, analytical, and documentation skills expected of an entry-level SOC Analyst.
 
----
-
-# 📸 Investigation Evidence
-
-> Expand each section below to view the supporting evidence collected during the investigation.
-
-<details>
-<summary><strong>📧 Email Header Analysis</strong></summary>
-
-Add your email header screenshots here.
-
-</details>
-
----
-
-<details>
-<summary><strong>🛡 SPF Authentication Analysis</strong></summary>
-
-Add your SPF validation screenshots here.
-
-</details>
-
----
-
-<details>
-<summary><strong>📦 Attachment Verification</strong></summary>
-
-Add your attachment analysis screenshots here.
-
-</details>
-
----
-
-<details>
-<summary><strong>🔍 File Signature Analysis</strong></summary>
-
-Add your file signature verification screenshots here.
-
-</details>
-
----
-
-<details>
-<summary><strong>🧬 Base64 Decoding</strong></summary>
-
-Add your Base64 decoding screenshots here.
-
-</details>
-
----
-
-<details>
-<summary><strong>📁 Hidden File Investigation</strong></summary>
-
-Add your hidden file discovery screenshots here.
-
-</details>
-
----
-
-<details>
-<summary><strong>📝 Metadata Analysis</strong></summary>
-
-Add your metadata analysis screenshots here.
-
-</details>
-
----
+--
 
 # 🚀 Future Enhancements
 
@@ -1093,18 +864,15 @@ As I continue developing my SOC and DFIR skills, I plan to extend this investiga
 
 ---
 
-I am passionate about investigating security incidents, analyzing threats, and continuously developing hands-on cybersecurity skills through practical labs and real-world projects.
-
-My goal is to build a career in Security Operations, Incident Response, Threat Detection, and Cloud Security while contributing to organizations by protecting systems against evolving cyber threats.
-
-
----
-
 # 🌟 Final Reflection
 
 Cybersecurity is about more than identifying malicious activity—it's about understanding attacker behavior, validating evidence, communicating findings effectively, and continuously improving defensive capabilities.
 
 This investigation strengthened my ability to think like a SOC Analyst by applying structured investigative techniques, documenting evidence, and producing a professional incident report based on real-world methodologies.
+
+I am passionate about investigating security incidents, analyzing threats, and continuously developing hands-on cybersecurity skills through practical labs and real-world projects.
+
+My goal is to build a career in Security Operations, Incident Response, Threat Detection, and Cloud Security while contributing to organizations by protecting systems against evolving cyber threats.
 
 Every investigation is an opportunity to learn, improve, and become better prepared for the next threat.
 
@@ -1112,7 +880,7 @@ Every investigation is an opportunity to learn, improve, and become better prepa
 
 <div align="center">
 
-# ⭐ Thank You for Visiting This Repository
+# Thank You for Visiting This project
 
 ### If you found this project insightful or helpful, please consider giving it a ⭐.
 
@@ -1122,6 +890,6 @@ Every investigation is an opportunity to learn, improve, and become better prepa
 
 ---
 
-**Built with curiosity, integrity, and a passion for cybersecurity.**
+**Built with curiosity, integrity, and a passion for SOC Analysis.**
 
 </div>

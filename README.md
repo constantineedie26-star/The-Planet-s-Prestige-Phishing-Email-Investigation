@@ -297,18 +297,26 @@ Initial appearance suggested the attachment was a PDF document.
 
 However, file signature analysis was performed to verify the file's true identity.
 
-### Attachment Findings
-Declared filename: `PuzzleToCoCanDa.pdf`
-Declared content type: `application/pdf`
-Transfer encoding: `Base64`
-Observed file signature: `50 4B 03 04`
-Identified file type: `ZIP-based archive`
-Finding: The attachment’s actual file type did not match its .pdf extension or declared MIME type.
+
+### 📎 Attachment Analysis
+
+| **Attribute** | **Value** |
+|:--------------|:----------|
+| **Declared Filename** | `PuzzleToCoCanDa.pdf` |
+| **Declared Content Type** | `application/pdf` |
+| **Transfer Encoding** | `Base64` |
+| **Observed File Signature** | `50 4B 03 04` |
+| **Identified File Type** | `ZIP Archive` |
+| **Finding** | The attachment was disguised as a PDF, but file-signature analysis confirmed it was a ZIP archive, indicating an attempt to conceal its true content. |
 
 The attachment had been intentionally disguised using a misleading file extension.
 
 ---
 The raw email contained an attachment named PuzzleToCoCanDa.pdf. Its MIME headers declared it as an application/pdf, and its contents were encoded using Base64.
+
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/98ddcb30f7a2b4fe588d6e667a00c70dc57c01ea/Attachment%20file.png)
+
+`Kind Note`: All attachment analysis and file extraction were performed inside an isolated Windows virtual machine.
 
 ---
 

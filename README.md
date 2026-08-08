@@ -241,13 +241,9 @@ Although an SPF failure alone does not confirm malicious activity, it significan
 
 ---
 
-<details>
+# Test
 
-<summary><strong>📸 View SPF Validation Screenshots</strong></summary>
-
-Insert screenshots showing the SPF failure.
-
-</details>
+![SPF](spf%20file.png)
 
 ---
 

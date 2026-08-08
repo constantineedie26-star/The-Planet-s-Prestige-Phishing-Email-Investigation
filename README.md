@@ -268,7 +268,10 @@ Although Base64 is not encryption, threat actors frequently use it to obscure ma
 ---
 
 # Base64 Decoding:
-The raw email showed a multipart MIME structure and a Base64-encoded plain-text body.
+The raw email showed a multipart MIME structure and a Base64-encoded plain-text body:
+
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/39715b976a702cbdbadfcfebd3c0daa8ae239ae0/Base64%20encoded.png)
+I copied and pasted the Base64-encoded message body into CyberChef and decoded it using the From Base64 operation.
 
 # Phase 4-Attachment Verification
 

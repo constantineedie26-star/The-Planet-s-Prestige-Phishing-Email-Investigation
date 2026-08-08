@@ -375,27 +375,23 @@ Having confirmed the attachment's true file type as a ZIP archive, I modified th
 The ZIP archive was extracted and examined within an isolated Windows 11 virtual machine, ensuring a controlled environment for safely analyzing its contents while protecting the host system.
 ![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/a4c6e2a79d00d9158b5dbba519af2598724c2d02/Archive%20extraction.png)
 
+The extracted archive contained a folder named `PuzzleToCoCanDa`.
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/74a69a76ce4953130d8877a74607ed54267977a3/Puzzletococanda.png)
+
+Upon extraction, the archive contained two files-`DaughtersCrown` and GoodJobMajor`-`which were identified for further forensic analysis.
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/74a69a76ce4953130d8877a74607ed54267977a3/Daughters%20crown%20and%20goodjobmajor.png)
 ---
 
-<details>
-
-<summary><strong>📸 View Archive Extraction Screenshots</strong></summary>
-
-Insert screenshots showing the extracted archive contents.
-
-</details>
-
----
 
 # Phase 7-Hidden File Analysis
 
 ## Objective
 
-Identify concealed evidence contained within the extracted archive.
+Tdentify concealed evidence contained within the extracted archive.
 
 ## Investigation
 
-One spreadsheet remained hidden during initial inspection.
+The extracted archive contained a folder named `PuzzleToCoCanDa`. Initial inspection revealed two visible files-`DaughtersCrown and GoodJobMajor`. After enabling Hidden items in File Explorer, a hidden spreadsheet `(Money.xlsx)` was also identified. Before opening any files, their actual file types and contents were verified as part of the forensic investigation.
 
 Further analysis revealed concealed Base64-encoded information embedded within the spreadsheet.
 
@@ -403,19 +399,15 @@ After decoding the hidden content, the following location was recovered:
 
 > **The Martian Colony, Beside Interplanetary Spaceport**
 
-### Analyst Notes
+
+
+
+
+
+
 
 Hidden files and concealed data are common techniques used to delay detection and complicate forensic investigations.
 
----
-
-<details>
-
-<summary><strong>📸 View Hidden Spreadsheet Screenshots</strong></summary>
-
-Insert screenshots showing the hidden spreadsheet and decoded content.
-
-</details>
 
 ---
 

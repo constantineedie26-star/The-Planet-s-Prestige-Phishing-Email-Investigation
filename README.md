@@ -368,7 +368,12 @@ Three files were recovered during extraction.
 | GoodJobMajor | PDF Document |
 | Money.xlsx | Hidden Spreadsheet |
 
-No files were executed during the investigation.
+Having confirmed the attachment's true file type as a ZIP archive, I modified the CyberChef workflow by removing the To Hex operation and exported the decoded content as email_attachment.zip, enabling detailed analysis of the extracted files.
+
+[!image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/a4c6e2a79d00d9158b5dbba519af2598724c2d02/Email%20extraction.png)
+
+The ZIP archive was extracted and examined within an isolated Windows 11 virtual machine, ensuring a controlled environment for safely analyzing its contents while protecting the host system.
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/a4c6e2a79d00d9158b5dbba519af2598724c2d02/Archive%20extraction.png)
 
 ---
 

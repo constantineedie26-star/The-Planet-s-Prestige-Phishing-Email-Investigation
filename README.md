@@ -209,8 +209,8 @@ These findings justified continuing the investigation.
 
 >
 
-```text
-<a href="https://imgur.com/a/7PkGNfI">Email Header</a>
+`
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/8a922390eb7101ef5eb9b75c07747836dac05f44/Screenshot%202026-08-08%20150712.png)
 ```
 
 </details>

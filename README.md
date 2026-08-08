@@ -398,18 +398,16 @@ Further analysis revealed concealed Base64-encoded information embedded within t
 While reviewing the extracted folder, I enabled Hidden items in Windows File Explorer. This revealed an additional file named Money.xlsx that was not visible by default.
 
 
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/3525123a91b105b3be9be101f9c2119d2c5a0fd2/Hidden%20File%20discovery.png)
 
 
+| File Name | Visibility | Initial Assessment |
+|-----------|------------|--------------------|
+| `DaughtersCrown` | Visible | Identified for subsequent file-type verification and analysis. |
+| `GoodJobMajor` | Visible | Flagged for further examination to determine its contents and purpose. |
+| `Money.xlsx` | Hidden | Discovered after enabling **Hidden items** in File Explorer. Its concealed status elevated its priority for detailed file-type and content analysis. |
 
-After decoding the hidden content, the following location was recovered:
-
-> **The Martian Colony, Beside Interplanetary Spaceport**
-
-
-
-
-
-
+> **Observation:** The archive contained three files. The presence of the hidden file `Money.xlsx` suggested a deliberate attempt to conceal information, making it a high-priority artifact for further forensic investigation.
 
 
 Hidden files and concealed data are common techniques used to delay detection and complicate forensic investigations.

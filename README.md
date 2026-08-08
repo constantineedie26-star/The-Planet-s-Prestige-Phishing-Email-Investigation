@@ -340,21 +340,12 @@ Rather than relying on the file extension, the file header was examined.
 
 The signature identified the attachment as a ZIP archive instead of a PDF document.
 
-### Analyst Notes
+To validate the attachment's true file type, I analyzed its Base64-encoded content in CyberChef by applying the `From Base64` operation followed by `To Hex`, enabling examination of the file's first four-byte signature.
+
 
 Threat actors frequently disguise malicious files by changing their extensions while leaving the underlying file format unchanged.
 
 File signature analysis is a critical forensic technique for detecting disguised files.
-
----
-
-<details>
-
-<summary><strong>📸 View File Signature Screenshots</strong></summary>
-
-Insert screenshots showing the file signature verification.
-
-</details>
 
 ---
 

@@ -257,13 +257,9 @@ The encoded data was decoded to expose the original content for forensic examina
 - Decoded information provided additional evidence for the investigation.
 
 ### Analyst Notes
-The provided evidence was an .eml file named A Hope to CoCanDa.eml. I opened the file in Notepad++ to review the raw email contents, including the headers, MIME structure, encoded message body, and attachment information.
+The provided evidence was an `.eml` file named `A Hope to CoCanDa.eml`. I opened the file in Notepad++ to review the raw email contents, including the headers, MIME structure, encoded message body, and attachment information.
 
 The email was identified as a multipart MIME message containing a Base64-encoded plain-text body. After decoding the body in CyberChef, I identified a ransom demand and instructions to solve an attached puzzle.
-
-Base64 encoding is commonly used to transport binary data within email messages.
-
-Although Base64 is not encryption, threat actors frequently use it to obscure malicious content from casual inspection.
 
 ---
 
@@ -271,13 +267,23 @@ Although Base64 is not encryption, threat actors frequently use it to obscure ma
 The raw email showed a multipart MIME structure and a Base64-encoded plain-text body:
 
 ![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/39715b976a702cbdbadfcfebd3c0daa8ae239ae0/Base64%20encoded.png)
+
 I copied and pasted the Base64-encoded message body into CyberChef and decoded it using the From Base64 operation.
+
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/d81106c94cf3abe7f8500bd65b82c761fa160e9b/Base64%20decoded.png)
+
+Base64 encoding is commonly used to transport binary data within email messages.
+
+Although Base64 is not encryption, threat actors frequently use it to obscure malicious content from casual inspection.
+
+
 
 # Phase 4-Attachment Verification
 
 ## Objective
 
 Determine whether the attachment accurately represented its advertised file type.
+This mismatch showed that the attachment was presented as a PDF even though its file signature identified it as a ZIP-based archive. Because the file type did not match the declared extension, I continued the analysis inside an isolated Windows virtual machine.
 
 ## Investigation
 
@@ -291,23 +297,18 @@ Initial appearance suggested the attachment was a PDF document.
 
 However, file signature analysis was performed to verify the file's true identity.
 
-### Findings
-
-| Displayed Extension | Actual File Type |
-|---------------------|------------------|
-| PDF | ZIP Archive |
+### Attachment Findings
+Declared filename: `PuzzleToCoCanDa.pdf`
+Declared content type: `application/pdf`
+Transfer encoding: `Base64`
+Observed file signature: `50 4B 03 04`
+Identified file type: `ZIP-based archive`
+Finding: The attachment’s actual file type did not match its .pdf extension or declared MIME type.
 
 The attachment had been intentionally disguised using a misleading file extension.
 
 ---
-
-<details>
-
-<summary><strong>📸 View Attachment Analysis Screenshots</strong></summary>
-
-Insert screenshots showing the attachment inspection.
-
-</details>
+The raw email contained an attachment named PuzzleToCoCanDa.pdf. Its MIME headers declared it as an application/pdf, and its contents were encoded using Base64.
 
 ---
 

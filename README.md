@@ -374,7 +374,7 @@ Three files were recovered during extraction.
 
 Having confirmed the attachment's true file type as a ZIP archive, I modified the CyberChef workflow by removing the To Hex operation and exported the decoded content as email_attachment.zip, enabling detailed analysis of the extracted files.
 
-[!image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/a4c6e2a79d00d9158b5dbba519af2598724c2d02/Email%20extraction.png)
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/a4c6e2a79d00d9158b5dbba519af2598724c2d02/Email%20extraction.png)
 
 The ZIP archive was extracted and examined within an isolated Windows 11 virtual machine, ensuring a controlled environment for safely analyzing its contents while protecting the host system.
 ![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/a4c6e2a79d00d9158b5dbba519af2598724c2d02/Archive%20extraction.png)
@@ -383,7 +383,9 @@ The extracted archive contained a folder named `PuzzleToCoCanDa`.
 ![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/74a69a76ce4953130d8877a74607ed54267977a3/Puzzletococanda.png)
 
 Upon extraction, the archive contained two files-`DaughtersCrown` and GoodJobMajor`-`which were identified for further forensic analysis.
+
 ![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/74a69a76ce4953130d8877a74607ed54267977a3/Daughters%20crown%20and%20goodjobmajor.png)
+
 ---
 
 
@@ -1039,5 +1041,6 @@ The investigation findings were successfully validated against the **Blue Team L
 **Platform:** Blue Team Labs Online
 **Status:** ✅ Successfully Completed
 **Completion Date:** August 10, 2026
+
 ![Image](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/067d7426a9126fc1c9ca94a51c2c086871f2e118/Blue%20team%20challenge.png)
 

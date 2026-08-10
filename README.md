@@ -25,6 +25,10 @@ Throughout the investigation, multiple Indicators of Compromise (IOCs) were iden
 
 This project demonstrates practical skills commonly used by Tier 1 Security Operations Center (SOC) Analysts during phishing investigations, evidence collection, and incident documentation.
 
+
+<a href="https://github.com/constantineedie26-star/The-Planet-s-Prestige-Email-Phishing-Investigation">Kindl click here to get a quick Summary</a>|
+
+
 ---
 
 # Project Overview

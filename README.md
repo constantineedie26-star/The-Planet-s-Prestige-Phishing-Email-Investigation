@@ -438,6 +438,11 @@ Cross-referencing this signature with **Gary Kessler's File Signature Table** co
 
 The file was analyzed in HxD Hex Editor to verify its true file type. Examination of the file header revealed the hexadecimal signature FF D8 FF E0, providing the evidence needed for file-type identification.
 
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/afb00fae2a60760f5e87f05626a07ecc320c9648/HxD%20Hex%20Editor.png)
+
+The identified file signature was validated against Gary Kessler's File Signature Table, confirming a match with the standard JPEG/JFIF signature. This verification established the file's true format independently of its missing file extension
+
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/afb00fae2a60760f5e87f05626a07ecc320c9648/Gary%20Kessler's%20File%20Signature%20Table.png)
 ----
 # Phase 8-Metadata Analysis
 

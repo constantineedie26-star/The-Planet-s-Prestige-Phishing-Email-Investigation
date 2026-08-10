@@ -443,6 +443,14 @@ The file was analyzed in HxD Hex Editor to verify its true file type. Examinatio
 The identified file signature was validated against Gary Kessler's File Signature Table, confirming a match with the standard JPEG/JFIF signature. This verification established the file's true format independently of its missing file extension
 
 ![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/afb00fae2a60760f5e87f05626a07ecc320c9648/Gary%20Kessler's%20File%20Signature%20Table.png)
+
+Following successful file-signature verification, I renamed DaughtersCrown to DaughtersCrown.jpeg so that its filename accurately represented its verified JPEG format, facilitating subsequent analysis.
+
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/010a06c9ce8815dddfdca40547da9b6438d9665d/DaughtersCrown-jpeg.png)
+
+After confirming the file's true format through file-signature analysis, I opened DaughtersCrown.jpeg within the isolated Windows 11 virtual machine. The file rendered successfully and displayed a crown graphic, confirming that the renamed file was a valid JPEG image.
+
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/010a06c9ce8815dddfdca40547da9b6438d9665d/DaughtersCrown.png)
 ----
 # Phase 8-Metadata Analysis
 

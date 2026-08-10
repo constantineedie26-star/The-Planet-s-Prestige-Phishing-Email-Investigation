@@ -525,17 +525,13 @@ After confirming the file's true format through file-signature analysis, I opene
 
 
 ----
-# Phase 8-Metadata Analysis
+# Phase 9-Metadata Analysis
 
 ## Objective
 
 To identify additional forensic artifacts, I examined the metadata of GoodJobMajor.pdf using ExifTool. Analysis of the document's Author field revealed the first and last name requested during the investigation, demonstrating how document metadata can provide valuable investigative leads.
 
 ## Investigation
-
-### 📑 PDF Metadata Analysis
-
-To identify additional forensic artifacts, I examined the metadata of `GoodJobMajor.pdf` using **ExifTool**. Analysis of the document metadata revealed valuable information about its origin and authorship.
 
 ### 📋 Metadata Findings
 
@@ -552,9 +548,6 @@ To identify additional forensic artifacts, I examined the metadata of `GoodJobMa
 
 Metadata should always be corroborated with additional evidence.
 
-
-
-### 📊 Extracted File Analysis
 
 #### `Money.xlsx`
 
@@ -581,71 +574,90 @@ After validating the file type, I safely opened `Money.xlsx` within the isolated
 | **Status** | Successfully verified and opened for further analysis. |
 | **Conclusion** | File-signature analysis confirmed that `Money.xlsx` was a legitimate Microsoft Excel workbook. Despite having a valid file extension, independent verification ensured that the file matched its declared format before examination. |
 
-The file was analyzed in HxD Hex Editor to verify its true file type. Examination of the file header revealed the hexadecimal signature 50 4B 03 04, providing the evidence required to confirm that the workbook matched its declared Microsoft Excel format.
----
+The file was examined in HxD, where the first four bytes of the file header were identified as 50 4B 03 04.
 
-# Evidence Collected
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/2d83bd898bda08079f2402d69934a69550c15e0d/money%20HxD.png)
 
-| Evidence | Description |
-|-----------|-------------|
-| Email Headers | Sender information and routing path |
-| SPF Results | Failed authentication |
-| Base64 Content | Decoded email and attachment |
-| File Signature | ZIP archive masquerading as PDF |
-| Extracted Files | JPEG, PDF, Hidden Spreadsheet |
-| Metadata | Document author information |
-| Final Location | The Martian Colony, Beside Interplanetary Spaceport |
+The identified file signature was compared against Gary Kessler’s File Signature Database and confirmed to correspond to the Microsoft Office Open XML format used by `.xlsx` spreadsheet files.
 
----
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/2d83bd898bda08079f2402d69934a69550c15e0d/Money%20Kessler.png)
 
-## Phase Summary
+After verifying the file signature, I safely opened Money.xlsx in googlesheet within an isolated Windows VM. The first worksheet revealed a message contradicting the earlier intelligence and threatening to initiate war against the CoCanDians.
 
-Throughout the investigation, multiple Indicators of Compromise were identified by correlating email header analysis, authentication results, file validation, encoded content, hidden artifacts, and document metadata. Each stage contributed valuable evidence that enabled the reconstruction of the attack and prepared the investigation for formal reporting in the next phase.
+Security Note: `The spreadsheet was analyzed in an isolated environment to reduce the risk associated with handling an untrusted file`.
 
----
+Money.xlsx first worksheet:
 
-# 📑 Professional Investigation Report
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/2d83bd898bda08079f2402d69934a69550c15e0d/Money%20sheet%201.png)
 
-This section consolidates the evidence collected throughout the investigation into a structured incident report. The objective is to clearly communicate the nature of the threat, document the investigative findings, identify Indicators of Compromise (IOCs), and recommend defensive actions. This reporting format aligns with documentation practices commonly used by Security Operations Center (SOC) analysts during phishing investigations.
+A second worksheet, `Sheet3`, initially appeared blank. After removing the cell formatting, previously concealed text was revealed, providing an additional investigative clue.
 
----
+Hidden text discovery in Sheet3.The worksheet initially appeared blank.
 
-# Executive Findings
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/2d83bd898bda08079f2402d69934a69550c15e0d/Blank%20Worsheet3.png)
 
-The investigation confirmed that the email was a **simulated phishing attack** designed to deceive the recipient through social engineering and multiple evasion techniques.
 
-Analysis identified several Indicators of Compromise (IOCs), including a spoofed sender identity, failed SPF authentication, Base64-encoded content, a disguised ZIP archive presented as a PDF document, hidden files, and manipulated metadata.
+Clearing the formatting revealed a previously concealed **encoded string**, providing an additional clue for further analysis.
 
-No malware execution occurred during the investigation because all analysis was performed inside an isolated Windows 11 virtual machine.
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/2d83bd898bda08079f2402d69934a69550c15e0d/Encoded%20String.png)
 
-The concealed evidence was successfully recovered, allowing the investigation to reconstruct the attack methodology and identify the hidden location embedded within the spreadsheet.
+#### Base64 Decoding
 
----
+The concealed string recovered from `Sheet3` was copied into **CyberChef** and decoded using the **From Base64** operation, revealing the underlying message for further analysis.
 
-# Incident Summary
+**Base64 Decoding of the Concealed `Sheet3` Text**
 
-| Category | Details |
-|-----------|---------|
-| Incident Type | Phishing Email Investigation |
-| Severity | Medium |
-| Status | Closed |
-| Investigation Outcome | Completed Successfully |
-| Environment | Windows 11 Virtual Machine |
-| Evidence Preserved | Yes |
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/2d83bd898bda08079f2402d69934a69550c15e0d/Base64%20sheet%203.png)
 
----
 
-# Investigation Findings
+The decoded message revealed the location: `The Martian Colony, Beside Interplanetary Spaceport.`
 
-| Finding | Description |
-|----------|-------------|
-| Email Authentication | SPF validation failed. |
-| Sender Identity | Sender and Reply-To domains did not match. |
-| Email Origin | Message originated from **emkei.cz** (9399.104.210). |
-| Attachment | Advertised as a PDF but verified as a ZIP archive. |
-| Hidden Content | Base64-encoded data discovered within a hidden spreadsheet. |
-| Metadata | Author listed as **Pestero Negeja** (not sufficient for attribution). |
-| Final Evidence | Hidden message revealed **The Martian Colony, Beside Interplanetary Spaceport**. |
+This finding confirmed the location referenced in `GoodJobMajor.pdf` and provided the next investigative lead.
+
+#### `Money.xlsx` Findings
+
+* **Filename:** `Money.xlsx`
+* **File Signature:** `50 4B 03 04`
+* **Verified File Type:** Microsoft Excel Open XML spreadsheet
+* **Worksheets:** `Sheet1`, `Sheet3`
+* **`Sheet1`:** Contained a message disputing the earlier intelligence and threatening war against the CoCanDians.
+* **`Sheet3`:** Contained Base64-encoded text concealed through cell formatting.
+* **Decoded Location:** `The Martian Colony, Beside Interplanetary Spaceport.`
+
+## 🔎 Findings Summary
+
+The investigation began with a suspicious `.eml` email containing a ransom-themed message and an attachment disguised as `PuzzleToCoCanDa.pdf`.
+
+### 🚨 Initial Indicators of Compromise
+
+Email-header analysis uncovered multiple red flags:
+
+* **SPF authentication:** Failed
+* **Sender vs. Reply-To:** Different domains, indicating potential spoofing or impersonation
+* **Attachment:** Base64-encoded and falsely presented as a PDF
+* **File signature:** Confirmed the attachment was actually a ZIP-based archive
+
+### 🧩 Artifact Extraction & Analysis
+
+After safely decoding and extracting the archive within an **isolated Windows virtual machine**, three artifacts were recovered:
+
+| Artifact         | Identified Type   | Key Finding                                     |
+| ---------------- | ----------------- | ----------------------------------------------- |
+| `DaughtersCrown` | JPEG image        | Image depicting a crown                         |
+| `GoodJobMajor`   | PDF document      | Contained additional investigative instructions |
+| `Money.xlsx`     | Excel spreadsheet | Hidden file containing encoded content          |
+
+Further analysis of `Money.xlsx` revealed a concealed Base64-encoded message hidden through spreadsheet formatting.
+
+### 🔐 Decoded Intelligence
+
+The concealed Base64 content was extracted and decoded using **CyberChef**, revealing the following location:
+
+```text
+The Martian Colony, Beside Interplanetary Spaceport.
+```
+
+This became the **final investigative lead** uncovered from the malicious email and its associated artifacts.
 
 ---
 
@@ -990,7 +1002,20 @@ Every investigation is an opportunity to learn, improve, and become better prepa
 
 ---
 
-<div align="center">
+## 🧠 Investigation Conclusion
+
+The investigation demonstrated a multi-layered attempt to conceal malicious content through **sender spoofing, failed email authentication, deceptive file extensions, encoded data, archive masquerading, hidden files, and spreadsheet-based obfuscation**.
+
+By systematically analyzing the raw email, validating file signatures, decoding Base64 content, extracting the disguised archive, and examining the recovered artifacts, I successfully traced the attacker’s embedded instructions to:
+
+```text
+The Martian Colony, Beside Interplanetary Spaceport.
+```
+
+The investigation findings were successfully validated against the **Blue Team Labs Online** challenge, confirming completion of **The Planet’s Prestige** investigation.
+
+
+> **Key Takeaway:** This investigation reinforced the importance of validating email headers, file signatures, encoded content, and hidden artifacts rather than trusting filenames, extensions, or visible email content at face value.
 
 # Thank You for Visiting This project
 
@@ -1004,4 +1029,10 @@ Every investigation is an opportunity to learn, improve, and become better prepa
 
 **Built with curiosity, integrity, and a passion for SOC Analysis.**
 
-</div>
+## 🏆 Challenge Completion
+
+**Challenge:** The Planet’s Prestige
+**Platform:** Blue Team Labs Online
+**Status:** ✅ Successfully Completed
+**Completion Date:** August 4, 2026
+

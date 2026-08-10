@@ -1034,5 +1034,6 @@ The investigation findings were successfully validated against the **Blue Team L
 **Challenge:** The Planet’s Prestige
 **Platform:** Blue Team Labs Online
 **Status:** ✅ Successfully Completed
-**Completion Date:** August 4, 2026
+**Completion Date:** August 10, 2026
+![Image](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/067d7426a9126fc1c9ca94a51c2c086871f2e118/Blue%20team%20challenge.png)
 

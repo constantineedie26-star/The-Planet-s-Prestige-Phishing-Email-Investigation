@@ -412,9 +412,33 @@ While reviewing the extracted folder, I enabled Hidden items in Windows File Exp
 
 Hidden files and concealed data are common techniques used to delay detection and complicate forensic investigations.
 
-
 ---
 
+# Phase 8-Extracted File Analysis
+
+#### `DaughtersCrown`
+
+The extracted file, `DaughtersCrown`, was saved without a file extension. To determine its true file type, I examined its file signature using **HxD Hex Editor** before opening the file.
+
+Analysis revealed the hexadecimal signature:
+
+`FF D8 FF E0`
+
+Cross-referencing this signature with **Gary Kessler's File Signature Table** confirmed that it corresponds to a **JPEG/JFIF image**, verifying the file as a standard JPEG image despite the absence of a file extension.
+
+| **Attribute** | **Value** |
+|:--------------|:----------|
+| **File Name** | `DaughtersCrown` |
+| **File Extension** | None |
+| **Analysis Tool** | `HxD Hex Editor` |
+| **Observed File Signature** | `FF D8 FF E0` |
+| **Identified File Type** | `JPEG/JFIF Image` |
+| **Reference** | Gary Kessler's File Signature Table |
+| **Finding** | File-signature analysis confirmed that the file is a legitimate JPEG/JFIF image despite having no file extension. |
+
+The file was analyzed in HxD Hex Editor to verify its true file type. Examination of the file header revealed the hexadecimal signature FF D8 FF E0, providing the evidence needed for file-type identification.
+
+----
 # Phase 8-Metadata Analysis
 
 ## Objective

@@ -493,6 +493,15 @@ The renamed file was then opened within the isolated Windows 11 virtual machine.
 | **Renamed File** | `GoodJobMajor.pdf` |
 | **Observed Content** | PDF document containing additional instructions related to the investigation. |
 | **Conclusion** | File-signature analysis confirmed that the file was a legitimate PDF document despite having no file extension. |
+
+The file was analyzed in HxD Hex Editor to verify its true file type. Examination of the file header revealed the hexadecimal signature 25 50 44 46, providing the evidence required to accurately identify the file as a PDF document.
+
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/5bf5fb048e3584883d6fb536e4828e1c8e372ec6/GoodJobMajor%20HxD.png)
+
+The identified file signature was cross-referenced with Gary Kessler's File Signature Table, confirming a match with the standard PDF signature. This validation established the file's true format independently of its missing file extension.
+
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/5bf5fb048e3584883d6fb536e4828e1c8e372ec6/GoodJobMajor%20kessler.png)
+
 ----
 # Phase 8-Metadata Analysis
 

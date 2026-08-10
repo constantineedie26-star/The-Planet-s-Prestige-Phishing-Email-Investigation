@@ -436,7 +436,7 @@ Cross-referencing this signature with **Gary Kessler's File Signature Table** co
 | **Reference** | Gary Kessler's File Signature Table |
 | **Finding** | File-signature analysis confirmed that the file is a legitimate JPEG/JFIF image despite having no file extension. |
 
-The file was analyzed in HxD Hex Editor to verify its true file type. Examination of the file header revealed the hexadecimal signature FF D8 FF E0, providing the evidence needed for file-type identification.
+The file was analyzed in HxD Hex Editor to verify its true file type. Examination of the file header revealed the hexadecimal signature `FF D8 FF E0`, providing the evidence needed for file-type identification.
 
 ![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/afb00fae2a60760f5e87f05626a07ecc320c9648/HxD%20Hex%20Editor.png)
 
@@ -451,6 +451,48 @@ Following successful file-signature verification, I renamed DaughtersCrown to Da
 After confirming the file's true format through file-signature analysis, I opened DaughtersCrown.jpeg within the isolated Windows 11 virtual machine. The file rendered successfully and displayed a crown graphic, confirming that the renamed file was a valid JPEG image.
 
 ![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/010a06c9ce8815dddfdca40547da9b6438d9665d/DaughtersCrown.png)
+
+### 🖼️ DaughtersCrown Findings
+
+| **Attribute** | **Finding** |
+|:--------------|:------------|
+| **Original Filename** | `DaughtersCrown` |
+| **Original Extension** | None |
+| **Observed File Signature** | `FF D8 FF E0` |
+| **Identified File Type** | `JPEG/JFIF Image` |
+| **Renamed File** | `DaughtersCrown.jpeg` |
+| **Observed Content** | A crown image was successfully rendered after renaming the file, confirming that it was a valid JPEG image. |
+| **Conclusion** | File-signature analysis verified that the file was a legitimate JPEG/JFIF image despite having no file extension. |
+
+
+
+#### `GoodJobMajor`
+
+The extracted file, `GoodJobMajor`, was saved without a file extension. To determine its true file type, I examined its file signature using **HxD Hex Editor** before opening the file.
+
+Analysis of the file header revealed the following hexadecimal signature:
+
+`25 50 44 46`
+
+Cross-referencing this signature with **Gary Kessler's File Signature Table** confirmed that it corresponds to a **Portable Document Format (PDF)** file. This verification established the file's true format despite the absence of a file extension.
+
+After validating the file type, I renamed `GoodJobMajor` to `GoodJobMajor.pdf` so that its filename accurately reflected its verified format.
+
+The renamed file was then opened within the isolated Windows 11 virtual machine. Examination confirmed that it contained a PDF document with additional instructions related to the investigation.
+
+### 📄 GoodJobMajor Findings
+
+| **Attribute** | **Finding** |
+|:--------------|:------------|
+| **Original Filename** | `GoodJobMajor` |
+| **Original Extension** | None |
+| **Analysis Tool** | `HxD Hex Editor` |
+| **Observed File Signature** | `25 50 44 46` |
+| **Identified File Type** | `Portable Document Format (PDF)` |
+| **Reference** | Gary Kessler's File Signature Table |
+| **Renamed File** | `GoodJobMajor.pdf` |
+| **Observed Content** | PDF document containing additional instructions related to the investigation. |
+| **Conclusion** | File-signature analysis confirmed that the file was a legitimate PDF document despite having no file extension. |
 ----
 # Phase 8-Metadata Analysis
 

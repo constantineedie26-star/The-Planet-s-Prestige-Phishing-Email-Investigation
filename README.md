@@ -502,37 +502,86 @@ The identified file signature was cross-referenced with Gary Kessler's File Sign
 
 ![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/5bf5fb048e3584883d6fb536e4828e1c8e372ec6/GoodJobMajor%20kessler.png)
 
+Following successful file-signature verification, I renamed `GoodJobMajor` to `GoodJobMajor.pdf` so that its filename accurately reflected its verified PDF format, facilitating subsequent analysis.
+
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/741fb1a071e574950784e9ecbb362c2c2cf49c23/GoodJobMajor-pdf.png)
+
+After confirming the file's true format through file-signature analysis, I opened GoodJobMajor.pdf within the isolated Windows 11 virtual machine. The document revealed that the CoCanDians were safe, referenced DaughtersCrown as supporting evidence, and instructed the recipient to consult Money.xlsx for the destination associated with the 1 Billion CoCanDs payment. This finding identified Money.xlsx as the next key artifact for forensic analysis.
+
+![image alt](https://github.com/constantineedie26-star/The-Planet-s-Prestige-Phishing-Email-Investigation/blob/741fb1a071e574950784e9ecbb362c2c2cf49c23/GoodJobMajor%20content.png)
+
+### 📄 GoodJobMajor Findings
+
+| **Attribute** | **Finding** |
+|:--------------|:------------|
+| **Original Filename** | `GoodJobMajor` |
+| **Original Extension** | None |
+| **Observed File Signature** | `25 50 44 46` |
+| **Identified File Type** | `Portable Document Format (PDF)` |
+| **Renamed File** | `GoodJobMajor.pdf` |
+| **Observed Content** | The document stated that the CoCanDians were safe, referenced `DaughtersCrown` as supporting evidence, and directed the investigation to `Money.xlsx` for the location associated with the 1 Billion CoCanDs payment. |
+| **Conclusion** | File-signature analysis confirmed that the file was a legitimate PDF document despite having no file extension. The document also identified `Money.xlsx` as the next critical artifact for further forensic investigation. |
+
+
+
 ----
 # Phase 8-Metadata Analysis
 
 ## Objective
 
-Examine document metadata for additional forensic artifacts.
+To identify additional forensic artifacts, I examined the metadata of GoodJobMajor.pdf using ExifTool. Analysis of the document's Author field revealed the first and last name requested during the investigation, demonstrating how document metadata can provide valuable investigative leads.
 
 ## Investigation
 
-Metadata analysis identified the following document author:
+### 📑 PDF Metadata Analysis
 
-```
-Pestero Negeja
-```
+To identify additional forensic artifacts, I examined the metadata of `GoodJobMajor.pdf` using **ExifTool**. Analysis of the document metadata revealed valuable information about its origin and authorship.
 
-### Assessment
+### 📋 Metadata Findings
 
-Although metadata can provide useful investigative leads, it should never be considered definitive attribution because document properties can be modified.
+| **Attribute** | **Finding** |
+|:--------------|:------------|
+| **Analyzed File** | `GoodJobMajor.pdf` |
+| **Analysis Tool** | `ExifTool` |
+| **Author** | `Pestero Negeja` |
+| **Producer** | `Skia/PDF m90` |
+| **Page Count** | `1` |
+| **Finding** | The `Author` metadata field contained the name **Pestero Negeja**, providing the first and last name requested during the investigation. |
+
+> **Observation:** Document metadata identified **Pestero Negeja** as the likely creator of the PDF. However, metadata can be modified and should be treated as an investigative lead rather than conclusive evidence of authorship.
 
 Metadata should always be corroborated with additional evidence.
 
----
 
-<details>
 
-<summary><strong>📸 View Metadata Analysis Screenshots</strong></summary>
+### 📊 Extracted File Analysis
 
-Insert screenshots showing metadata analysis.
+#### `Money.xlsx`
 
-</details>
+Although the hidden file `Money.xlsx` already had a valid file extension, I verified its true file type through file-signature analysis before opening it. Using **HxD Hex Editor**, I examined the file header to confirm that its contents matched the declared spreadsheet format.
 
+Analysis of the file header revealed the following hexadecimal signature:
+
+`50 4B 03 04`
+
+The recovered file signature was cross-referenced with **Gary Kessler's File Signature Table**, where it matched the standard signature used by **Microsoft Office Open XML** documents, including `.xlsx` spreadsheets. This verification confirmed that the file was a legitimate Microsoft Excel workbook.
+
+After validating the file type, I safely opened `Money.xlsx` within the isolated Windows 11 virtual machine for further forensic analysis.
+
+### 📊 Money.xlsx Findings
+
+| **Attribute** | **Finding** |
+|:--------------|:------------|
+| **Filename** | `Money.xlsx` |
+| **Visibility** | Hidden |
+| **Analysis Tool** | `HxD Hex Editor` |
+| **Observed File Signature** | `50 4B 03 04` |
+| **Identified File Type** | `Microsoft Office Open XML Spreadsheet (.xlsx)` |
+| **Reference** | Gary Kessler's File Signature Table |
+| **Status** | Successfully verified and opened for further analysis. |
+| **Conclusion** | File-signature analysis confirmed that `Money.xlsx` was a legitimate Microsoft Excel workbook. Despite having a valid file extension, independent verification ensured that the file matched its declared format before examination. |
+
+The file was analyzed in HxD Hex Editor to verify its true file type. Examination of the file header revealed the hexadecimal signature 50 4B 03 04, providing the evidence required to confirm that the workbook matched its declared Microsoft Excel format.
 ---
 
 # Evidence Collected
